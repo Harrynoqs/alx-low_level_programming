@@ -1,43 +1,27 @@
 #include <stdio.h>
+
 /**
- * main- calculate fabonnacci
- * Return: c
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
  */
-int sum(int n);
-int fib(int n);
-cont int N = 4000000;
+
 int main(void)
 {
-	int i = 2;
-	printf(sum(i));
-	return 0;
-}
-int sum(int n) {
-	int sum = 0;
-	while (fib(n) < N)
-  {
-		if (fib(n)%2==0)
-    {
-			sum += fib(n);
-		}
-		n++;
-  }
-  return sum;
-}
+	int i;
+	long int fibonacci[50], sum = 2;
 
-int fib(int n)
-{
-	int a = 0;
-	int b = 1;
-	int c = 0;
-	int i = 1;
-  
-	while (i <= n)
-  {
-    c = a + b;
-		a = b;
-		b = c;
+	fibonacci[0] = 1;
+	fibonacci[1] = 2;
 
-		i++;
+	for (i = 2; i < 50; i++)
+	{
+		fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+		if ((fibonacci[i] % 2) == 0 && fibonacci[i] < 4000000)
+			sum += fibonacci[i];
 	}
-	return 0;
+	printf("%ld\n", sum);
+
+	return (0);
+}
+
