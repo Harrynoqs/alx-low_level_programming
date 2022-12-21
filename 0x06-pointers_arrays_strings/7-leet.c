@@ -3,7 +3,6 @@
 /**
 * leet - change letters for numbers in the internet
 * @p: string pointer
-* harry
 * Return: string
 */
 char *leet(char *p)
