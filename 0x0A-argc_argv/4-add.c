@@ -1,52 +1,28 @@
-#include "main.h"
-#include "stdio.h"
-#include "stdlib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 /**
- * digit - checkc for integers
- * @s: input digit
- * Return: 0 for success 1 for error
- */
-int digit(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (!(isdigit(s[i])))
-			return (0);
-	}
-	return (0);
-}
-
-/**
- * main - multiply numbers
- * @argc:the no of arguments
- * @argv: the name of the arguments
- * Return: 0 success 1 error
+ * main - adds positive numbers.
+ * @argc: number of command line arguments.
+ * @argv: array that contains the program command line arguments.
+ * Return: 0 - success.
  */
 int main(int argc, char *argv[])
 {
-	int i, j;
-	int sum = 0;
+	int i, j, add = 0;
 
-	if (argc < 2)
-	{
-		printf("0\n");
-		return (1);
-	}
 	for (i = 1; i < argc; i++)
 	{
-		if (digit(argv[i]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			j = atoi(argv[i]);
-			sum += j;
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		add += atoi(argv[i]);
 	}
-	printf("%d\n", sum);
+	printf("%d\n", add);
 	return (0);
 }
