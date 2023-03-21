@@ -1,8 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 int _putchar(char c);
 int _islower(int c);
@@ -25,4 +22,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif
+#endif/*MAIN_H*/
